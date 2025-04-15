@@ -1,0 +1,13 @@
+[project]
+authors = ["Burra Labs @vandhazel", "@jasmcaus"]
+entry = "main.sw"
+license = "Apache 2.0"
+name = "strategy"
+
+[dependencies]
+src20 = { git = "https://github.com/FuelLabs/sway-standards", tag = "v0.3.3" }
+src3  = { git = "https://github.com/FuelLabs/sway-standards", tag = "v0.3.3" }
+interfaces = { path = "../interfaces" }
+standards = { git = "https://github.com/FuelLabs/sway-standards", tag = "v0.6.1" }
+sway_libs = { git = "https://github.com/FuelLabs/sway-libs", tag = "v0.24.2" }
+fungible_abi = { path = "../fungible-abi" }

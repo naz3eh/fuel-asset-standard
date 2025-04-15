@@ -1,0 +1,13 @@
+[project]
+authors = ["@theausicist", "@xburralabs"]
+entry = "main.sw"
+license = "Apache 2.0"
+name = "treasury"
+
+[dependencies]
+standards = { git = "https://github.com/FuelLabs/sway-standards", tag = "v0.6.3" }
+sway_libs = { git = "https://github.com/FuelLabs/sway-libs", tag = "v0.24.2" }
+
+
+[contract-dependencies]
+strategy = { path = "../strategy" }

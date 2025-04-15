@@ -2,4 +2,14 @@
 members = [
     "contracts/fungible-abi",
     "contracts/fungible",
+    "contracts/strategy",
+    "contracts/interfaces",
+    "contracts/treasury",
+     "contracts/mockMira",
+    "contracts/mocktoken",
 ]
+
+[dependencies]
+
+fungible_abi = { git = "https://github.com/burralabs/fuel-asset-standard" }
+fungible = { git = "https://github.com/burralabs/fuel-asset-standard" }
