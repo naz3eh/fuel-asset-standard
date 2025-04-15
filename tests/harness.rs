@@ -743,7 +743,7 @@ async fn test_successful_withdraw() {
 
     // Convert ContractId to Address and then to Bech32Address
     let strategy_address: Bech32Address = Address::new(*strategy_id).into();
-    println!("Strategy contract address: {:?}", strategy_address);
+    println!("Strategy contract address: {:?}", strategy_address.clone());
     
     // Use add_custom_asset to send funds directly to the strategy contract
     let funding_result = strategy_instance.clone()
@@ -753,7 +753,7 @@ async fn test_successful_withdraw() {
         .add_custom_asset(
             fuel_asset,
             funding_amount,
-            Some(strategy_address),
+            Some(strategy_address.clone()),
         )
         .call()
         .await;
