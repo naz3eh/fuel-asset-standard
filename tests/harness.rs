@@ -796,8 +796,30 @@ async fn test_successful_withdraw() {
     
     // Withdraw a small portion
     let withdraw_amount = 100;
+    println!("\nChecking recipient balances before withdrawal:");
+    
+    // Check FUEL balance
+    let pre_withdraw_fuel_balance = wallet
+        .get_asset_balance(&fuel_asset)
+        .await
+        .unwrap();
+    println!("Pre-withdraw FUEL balance: {}", pre_withdraw_fuel_balance);
+    
+    // Check USDC balance
+    let pre_withdraw_usdc_balance = wallet
+        .get_asset_balance(&usdc_asset)
+        .await
+        .unwrap_or(0);
+    println!("Pre-withdraw USDC balance: {}", pre_withdraw_usdc_balance);
+    
+    // Check receipt token balance
+    let pre_withdraw_receipt_balance = wallet
+        .get_asset_balance(&receipt_asset_id)
+        .await
+        .unwrap_or(0);
+    println!("Pre-withdraw receipt token balance: {}", pre_withdraw_receipt_balance);
+    
     println!("\nAttempting to withdraw {} receipt tokens...", withdraw_amount);
-    println!("Current receipt token balance: {}", receipt_balance);
     println!("Strategy contract address: {:?}", strategy_address.clone());
     
     let withdraw_result = strategy_instance.clone()
